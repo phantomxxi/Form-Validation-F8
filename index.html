@@ -57,6 +57,7 @@
         // Mong muốn của chúng ta
         Validator({
             form: '#form-1',
+            formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
                 Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
@@ -66,7 +67,8 @@
                     return document.querySelector('#form-1 #password').value;
                 }, 'Mật khẩu nhập lại không chính xác'),
             ],
-            onSubmit: (data) => {
+            onSubmit: function(data) {
+                // Call API
                 console.log(data)
             },
         });
